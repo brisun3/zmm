@@ -32,7 +32,7 @@ class PostsController extends Controller
     public function index()
     {
        // $posts = Post::where('status','free')->get();
-        $posts = Miss::orderBy('name','asc')->get();
+        $posts = Miss::orderBy('uname','asc')->get();
         //$posts = Post::orderBy('name','asc')->get();
         
         return view('posts.index')->with('posts', $posts);

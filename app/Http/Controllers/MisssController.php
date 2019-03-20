@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use DB;
+use Illuminate\Support\Facades\DB;
+//use DB;
 use App\Miss;
 use App\Status;
 
@@ -169,8 +170,13 @@ class MisssController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {   
-        $miss= Miss::find($id);
+    {
+        $miss=new Miss;
+        $miss -> setTable('爱尔兰_miss_tbl');
+        $miss= $miss->find($id);  
+       // $miss= Miss::find($id);
+       // if(auth()->user()->id!=$miss->user_id){
+          
         if(auth()->user()->id!=$miss->user_id){
             //need to confirm if '/posts'
             return redirect('/posts')->with('error','unathorized page');

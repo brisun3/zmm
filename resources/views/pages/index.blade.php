@@ -1,26 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Posts</h1>
+    <h1>Posts</h1><? dd($posts);?>
     <h2><?php 
 echo $ip_country;
+
     ?></h2>
     
 
 @if(count($city_num) > 0)
-<h1>dd1<? dd($posts);?></h1>
+
     
         @foreach($city_num as $city_name)
             <h2>{{$city_name->city}}</h2>
-            <h1>dd<? dd($posts);?></h1>
+            
             @if(count($posts) > 0)
                 <div class="container">
-                    <div class="row">dd3
+                    <div class="row">
                     @foreach($posts as $post)
-                    whar
+                  
                         @if($post->city==$city_name->city)
                         
-                                    
+                        <h1>dd<?php echo $post->id;?></h1>
                                 <div class="col-md-4 col-sm-3">
                                     @if($post->img0)
                                         <!-- first word in link misss must be controller's fore part--> 
@@ -32,7 +33,7 @@ echo $ip_country;
                                             <img src="/storage/img_name/no-user.jpg" style="height:130px; width:200px">
                                         </a>
                                     @endif
-                                        <h3>{{$post->name}}</h3>
+                                        <h3>{{$post->uname}}</h3>
                                         <small>{{$post->created_at}}  </small>
                                         <small>Addr1 {{$post->addr1}} by </small>
                                 </div>

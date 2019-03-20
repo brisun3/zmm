@@ -25,7 +25,7 @@
                             @foreach($posts as $post)
                             <tr>
                                 <td>{{$post->name}}</td>
-                            <td><a class="btn btn-primary" href="/posts/{{$post->id}}/edit">edit</a></td>
+                            <td><a class="btn btn-primary" href="/miss/{{$post->id}}/edit">edit</a></td>
                                 <td></td>
                             </tr>
                             @endforeach

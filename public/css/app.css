@@ -10487,11 +10487,8 @@ body {
 
 /* Optional: Makes the sample page fill the window. */
 
-html,
-body {
-  height: 100%;
-  margin: 440;
-  padding: 0;
+ul {
+  list-style-type: none;
 }
 
 .navbar-laravel {
